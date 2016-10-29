@@ -34,8 +34,6 @@
 		<?php
 			if ( is_single() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
-			elseif ( has_post_format('aside') && is_home() ) :
-				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 			else :
 				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 			endif;
@@ -47,7 +45,7 @@
 				} else {
 				    the_author_posts_link();
 				} ?> <br />
-			<?php echo get_the_date('j/n/y'); ?>, <?php the_time('G\hi'); ?> <span class="tempo-leitura"><?php echo reading_time(); ?></span> <span class="link-comentarios"><?php comments_popup_link('Comente', '1 comentário', '% comentários'); ?> </span>
+			<?php echo get_the_date('j/n/y'); ?>, <?php the_time('G\hi'); ?> <span class="tempo-leitura"><?php echo reading_time(); ?></span> <?php if ( !has_post_format() ) : ?><span class="link-comentarios"><?php comments_popup_link('Comente', '1 comentário', '% comentários'); ?> </span><?php endif; ?>
 		</div>
 
 		<div class="mdu-share">
@@ -92,35 +90,34 @@
 	<?php } ?>
 
 	<?php if ( has_post_format('aside') && is_singular() ) { ?>
-		<?php echo adinserter (7); ?>
+		<?php // echo adinserter (7); ?>
 	<?php } ?>
 
 	<?php if ( is_singular() ) { ?>
 		<?php zemanta_related_posts() ?>
 	<?php } ?>
-
-	<?php if ( is_singular() ) { ?>
-		<div class="follow">
-			<div class="follow-social">Siga <span>Nas redes sociais e em apps de chat</span><br />
-				<ul>
-					<li class="follow-social-first">
-						<a class="follow-social-logo messenger" href="https://m.me/manualdousuario" target="_blank"><img src="/wp-content/themes/twentyfifteen/img/messenger.png" alt="Messenger" />&nbsp;Messenger</a>
-					</li>
-					<li>
-						<a class="follow-social-logo telegram" href="https://telegram.me/manualdousuario" target="_blank"><img src="/wp-content/themes/twentyfifteen/img/telegram.png" alt="Telegram" />&nbsp;Telegram</a>
-					</li>
-					<li class="follow-social-last">
-						<a class="follow-social-logo twitter" href="https://twitter.com/manualusuariobr" target="_blank"><img src="/wp-content/themes/twentyfifteen/img/twitter.png" alt="Twitter" />&nbsp;Twitter</a>
-					</li>
-				</ul>
-			</div>
-			<div class="follow-newsletter">Receba por e-mail <span>Um resumo semanal</span><br />
-				<form action="https://tinyletter.com/manualdousuario" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/manualdousuario', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-					<input type="text" name="email" class="tlemail" /><input type="hidden" value="1" name="embed" />
-					<input type="submit" class="tlsend" value="Enviar" />
-				</form>
-			</div>
-		</div>
-	<?php } ?>
-
 </article><!-- #post-## -->
+
+<?php if ( is_singular() ) { ?>
+	<div class="follow">
+<!--			<div class="follow-social">Siga <span>Nas redes sociais e em apps de chat</span><br />
+			<ul>
+				<li class="follow-social-first">
+					<a class="follow-social-logo messenger" href="https://m.me/manualdousuario" target="_blank"><img src="/wp-content/themes/twentyfifteen/img/messenger.png" alt="Messenger" />&nbsp;Messenger</a>
+				</li>
+				<li>
+					<a class="follow-social-logo telegram" href="https://telegram.me/manualdousuario" target="_blank"><img src="/wp-content/themes/twentyfifteen/img/telegram.png" alt="Telegram" />&nbsp;Telegram</a>
+				</li>
+				<li class="follow-social-last">
+					<a class="follow-social-logo twitter" href="https://twitter.com/manualusuariobr" target="_blank"><img src="/wp-content/themes/twentyfifteen/img/twitter.png" alt="Twitter" />&nbsp;Twitter</a>
+				</li>
+			</ul>
+		</div> -->
+		<div class="follow-newsletter">Receba por e-mail <span>Um resumo semanal</span><br />
+			<form action="https://tinyletter.com/manualdousuario" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/manualdousuario', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+				<input type="text" name="email" class="tlemail" /><input type="hidden" value="1" name="embed" />
+				<input type="submit" class="tlsend" value="Enviar" />
+			</form>
+		</div>
+	</div>
+<?php } ?>
