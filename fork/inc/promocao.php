@@ -169,24 +169,6 @@ add_role(
 		)
 );
 
-add_action( 'admin_init', 'add_theme_caps');
-function add_theme_caps() {
-    // gets the author role
-    $role = get_role( 'administrator' );
-
-    // This only works, because it accesses the class instance.
-    // would allow the author to edit others' posts for current theme only
-    $role->add_cap( 'publish_promo' ); 
-    $role->add_cap( 'edit_promo' ); 
-    $role->add_cap( 'read_promo' ); 
-    $role->add_cap( 'delete_promo' ); 
-    $role->add_cap( 'edit_promos' ); 
-    $role->add_cap( 'edit_others_promos' ); 
-    $role->add_cap( 'publish_promos' ); 
-    $role->add_cap( 'read_private_promos' ); 
-    $role->add_cap( 'edit_promos' ); 
-}
-
 add_action('pre_get_posts','mdu_order_promocao_modified');
 function mdu_order_promocao_modified($qry) {
 	if ( $qry->is_main_query() && is_archive( 'promocao' ) ) {

@@ -13,12 +13,12 @@ function mdu_promocao_twitter_update( $post_id, $post, $update ) {
 
 	// Aborta se não é promoção
 	if ( 'promocao' != $post->post_type ) {
-		return;
+	    return;
 	}
 
 	// Aborta se não é post publicado (rascunho, private, etc)
 	if ( 'publish' != get_post_status( $post_id ) ) {
-		return;
+	    return;
 	}
 
 	$settings = array(
@@ -114,84 +114,36 @@ function mdu_registerPostType() {
 		'not_found'           => __( 'Não Encontrado', 'manual_do_usuario' ),
 		'not_found_in_trash'  => __( 'Não Encontrado na Lixeira', 'manual_do_usuario' ),
 		);
-	$args = array(
-		'label'               => __( 'promocao', 'manual_do_usuario' ),
-		'description'         => __( 'Promoções Manual do Usuário', 'manual_do_usuario' ),
-		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions' ),
-		'taxonomies'          => array( ),
-		'hierarchical'        => false,
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'menu_position'       => 20,
-		'menu_icon'           => 'dashicons-cart',
-		'show_in_admin_bar'   => true,
-		'show_in_nav_menus'   => true,
-		'can_export'          => true,
-		'rewrite'             => array( 'slug' => 'comprar', 'with_front' => false ),
-		'has_archive'         => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-		'capabilities' => array(
-			'edit_post'          => 'edit_promo',
-			'read_post'          => 'read_promo',
-			'delete_post'        => 'delete_promo',
-			'edit_posts'         => 'edit_promos',
-			'edit_others_posts'  => 'edit_others_promos',
-			'publish_posts'      => 'publish_promos',
-			'read_private_posts' => 'read_private_promos',
-			'create_posts'       => 'edit_promos',
-			),
-		);
+$args = array(
+	'label'               => __( 'promocao', 'manual_do_usuario' ),
+	'description'         => __( 'Promoções Manual do Usuário', 'manual_do_usuario' ),
+	'labels'              => $labels,
+	'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions' ),
+	'taxonomies'          => array( ),
+	'hierarchical'        => false,
+	'public'              => true,
+	'show_ui'             => true,
+	'show_in_menu'        => true,
+	'menu_position'       => 20,
+	'menu_icon'           => 'dashicons-cart',
+	'show_in_admin_bar'   => true,
+	'show_in_nav_menus'   => true,
+	'can_export'          => true,
+	'rewrite'             => array( 'slug' => 'comprar', 'with_front' => false ),
+	'has_archive'         => true,
+	'exclude_from_search' => false,
+	'publicly_queryable'  => true,
+	'capability_type'     => 'page',
+	);
 
-	register_post_type( 'promocao', $args );
-}
-
-add_role(
-	'promo_editor',
-	'Editor de Promoções',
-	array(
-		'publish_promo' => true,
-		'edit_promo' => true,
-		'read_promo' => true,
-		'delete_promo' => true,
-		'edit_promos' => true,
-		'edit_others_promos' => true,
-		'publish_promos' => true,
-		'read_private_promos' => true,
-		'edit_promos' => true,
-		'read' => true,
-		'edit_posts' => false,
-		'delete_posts' => false,
-		'publish_posts' => false,
-		'upload_files' => true,
-		)
-);
-
-add_action( 'admin_init', 'add_theme_caps');
-function add_theme_caps() {
-    // gets the author role
-    $role = get_role( 'administrator' );
-
-    // This only works, because it accesses the class instance.
-    // would allow the author to edit others' posts for current theme only
-    $role->add_cap( 'publish_promo' ); 
-    $role->add_cap( 'edit_promo' ); 
-    $role->add_cap( 'read_promo' ); 
-    $role->add_cap( 'delete_promo' ); 
-    $role->add_cap( 'edit_promos' ); 
-    $role->add_cap( 'edit_others_promos' ); 
-    $role->add_cap( 'publish_promos' ); 
-    $role->add_cap( 'read_private_promos' ); 
-    $role->add_cap( 'edit_promos' ); 
+register_post_type( 'promocao', $args );
 }
 
 add_action('pre_get_posts','mdu_order_promocao_modified');
 function mdu_order_promocao_modified($qry) {
-	if ( $qry->is_main_query() && is_archive( 'promocao' ) ) {
-		$qry->set('orderby','modified');
-	}
+  if ( $qry->is_main_query() && is_archive( 'promocao' ) ) {
+    $qry->set('orderby','modified');
+  }
 }
 
 //  http://jeremyhixon.com/tool/wordpress-meta-box-generator/
@@ -292,17 +244,17 @@ function mdu_custom_taxonomy() {
 		'not_found'                  => __( '', 'mdu' ),
 		);
 
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => false,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-		);
+$args = array(
+	'labels'                     => $labels,
+	'hierarchical'               => false,
+	'public'                     => true,
+	'show_ui'                    => true,
+	'show_admin_column'          => true,
+	'show_in_nav_menus'          => true,
+	'show_tagcloud'              => true,
+	);
 
-	register_taxonomy( 'tagpromocao', array( 'promocao' ), $args );
+register_taxonomy( 'tagpromocao', array( 'promocao' ), $args );
 
 }
 
