@@ -655,7 +655,7 @@ a.mdu-button:hover {
 }
 
 .mdu-button-assine:after {
-	content: '\f427';
+	content: '\f461';
 	font-size: 20px;
 	position: relative;
 	top: 5px;
