@@ -12,7 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( is_single() ) : ?>
-		<?php // echo adinserter (1); ?>
+		<?php echo adinserter (1); ?>
 	<?php endif; ?>
 
 	<?php if ( ( is_sticky() && is_home() ) || is_singular() || in_category('Comercial') /*|| !has_post_format() */) { ?>
