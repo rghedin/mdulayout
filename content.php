@@ -45,7 +45,7 @@
 				} else {
 				    the_author_posts_link();
 				} ?> <br />
-			<?php echo get_the_date('j/n/y'); ?>, <?php the_time('G\hi'); ?> <span class="tempo-leitura"><?php echo reading_time(); ?></span> <?php if ( !has_post_format() ) : ?><span class="link-comentarios"><?php comments_popup_link('Comente', '1 comentário', '% comentários'); ?> </span><?php endif; ?>
+			<?php echo get_the_date('j/n/y'); ?>, <?php the_time('G\hi'); ?> <span class="tempo-leitura"><?php echo reading_time(); ?></span> <span class="link-comentarios"><?php comments_popup_link('Comente', '1 comentário', '% comentários'); ?> </span>
 		</div>
 
 		<div class="mdu-share">
