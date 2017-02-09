@@ -40,7 +40,7 @@ get_header(); ?>
 
 				if ( $count == 0 ) : ?>
 					<div class="follow">
-						<div class="follow-newsletter">Receba por e-mail <span>Um resumo semanal</span><br />
+						<div class="follow-newsletter">Newsletter <span>Novos posts por e-mail</span><br />
 							<form action="https://tinyletter.com/manualdousuario" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/manualdousuario', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
 								<input type="text" name="email" class="tlemail" /><input type="hidden" value="1" name="embed" />
 								<input type="submit" class="tlsend" value="Enviar" />
