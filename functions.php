@@ -490,3 +490,9 @@ function reading_time() {
 
     return $totalreadingtime;
 }
+
+/**
+ * Ativa contagem de dias para posts
+ *
+ * Custom
+ */
