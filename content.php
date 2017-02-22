@@ -101,10 +101,6 @@
 								<?php if ( has_post_format('aside') && is_singular() ) { ?>
 									<?php // echo adinserter (7); ?>
 									<?php } ?>
-
-									<?php if ( is_singular() ) { ?>
-										<?php zemanta_related_posts() ?>
-										<?php } ?>
 									</article><!-- #post-## -->
 
 									<?php if ( is_singular() ) { ?>
