@@ -1876,19 +1876,7 @@ hr.post-entry-header-meta {
 	margin-bottom: 0;
 }
 
-/*.entry-content,
-.entry-summary,
-.page-content,
-.comment-content {
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
-	word-wrap: normal;
-}*/
-
 .single .entry-content {
-	border-bottom: 1px solid #EBEBEB;
 	margin-bottom: 2.8em;
 }
 
@@ -2744,7 +2732,9 @@ hr.post-entry-header-meta {
 }
 .compre p {
 	margin-bottom: .6em;
-	font-size: 90%;
+	font-size: 70%;
+	font-family: "Helvetica", Arial, sans-serif;
+	text-transform: uppercase;
 }
 
 .site-info {
