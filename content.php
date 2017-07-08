@@ -15,16 +15,7 @@
 	global $post;
 	if ((strtotime($post->post_date) < strtotime('-28 days')) && is_single()) {
 		?>
-		<div class="ad"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- MdU, responsivo -->
-			<ins class="adsbygoogle"
-			style="display:block"
-			data-ad-client="ca-pub-9617703244381493"
-			data-ad-slot="1717739000"
-			data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script></div>
+		<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
 			<?php } ?>
 
 			<?php if ( ( is_sticky() && is_home() ) || is_singular() || in_category('Comercial') ) { ?>

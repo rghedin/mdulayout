@@ -51,9 +51,9 @@
 					<?php endif;
 				?>
 				<button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
-				<a class="mdu-button mdu-button-assine" href="/assine">
+				<!--<a class="mdu-button mdu-button-assine" href="/assine">
 					Assine
-				</a>
+				</a>-->
 			</div><!-- .site-branding -->
 		</header><!-- .site-header -->
 
