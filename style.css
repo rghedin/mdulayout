@@ -6,11 +6,7 @@ Author URI: https://wordpress.org/
 Description: Baseado no tema Twenty Fifteen.
 Version: 1.0
 License: GNU General Public License v2 or later
-<<<<<<< HEAD
 Licen©se URI: http://www.gnu.org/licenses/gpl-2.0.html
-=======
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Text Domain: mdu2017
 
@@ -541,12 +537,7 @@ input[type="submit"] {
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-size: 12px;
 	font-size: 1.2rem;
-<<<<<<< HEAD
 	padding: 0.7917em 1em;
-=======
-	font-weight: lighter;
-	padding: 0.7917em 1.5em;
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
@@ -1758,21 +1749,13 @@ img.aligncenter {
 /*.sticky {
 	border-bottom: 1px solid #EBEBEB;
 	margin-bottom: 2.4em !important;
-<<<<<<< HEAD
 }
-=======
-}*/
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 
 .home .format-aside,
 .paged .format-aside {
 	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
 	margin-bottom: 2.4em;
-<<<<<<< HEAD
 }*/
-=======
-}
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 
 .post-thumbnail {
 	border: 0;
@@ -1860,7 +1843,6 @@ a.post-thumbnail:focus {
 }
 
 .entry-header-meta {
-<<<<<<< HEAD
 	font-size: 75%;
 	margin-bottom: 1.9231em;
 	line-height: 180%;
@@ -1875,16 +1857,6 @@ a.post-thumbnail:focus {
 .entry-header-meta a:hover {
 	border-bottom: 0;
 	color: rgb(170, 170, 170);
-=======
-  font-size: 85%;
-  margin-bottom: 1.9231em;
-	font-style: italic;
-	line-height: 150%;
-	font-weight: lighter;
-}
-hr.post-entry-header-meta {
-	margin-bottom: 2.4em;
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 }
 
 .entry-title {
@@ -1909,15 +1881,9 @@ hr.post-entry-header-meta {
 	margin-bottom: 0;
 }
 
-<<<<<<< HEAD
 /*.single .entry-content {
 	margin-bottom: 2.4em;
 } */
-=======
-.single .entry-content {
-	margin-bottom: 2.8em;
-}
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 
 .entry-content h1,
 .entry-summary h1,
@@ -3225,13 +3191,10 @@ p > video {
 		padding: 0 5.0505% 9.0909%;
 	}
 
-<<<<<<< HEAD
 	.mdu-share {
 		margin: 0 0 9.0909% 5.6923% !important
 	}
 
-=======
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 	.entry-footer {
 		padding: 4.5454% 5.0505%;
 	}
@@ -3468,15 +3431,9 @@ p > video {
 		padding: 0.6125em .6em !important;
 	}
 
-<<<<<<< HEAD
 	.follow,
 	.single .follow {
 		margin: 1.4em 8.3333% 0 8.3333%;
-=======
-	.follow {
-		margin-left: 8.3333% !important;
-		margin-right: 8.3333% !important;
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 	}
 
 	.main-navigation {
@@ -3972,11 +3929,7 @@ p > video {
 		font-size: 24px;
 		font-size: 2.4rem;
 		line-height: 1.3333;
-<<<<<<< HEAD
 		margin-bottom: 0.5231em;
-=======
-		margin-bottom: 1.3333em;
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 	}
 
 	.format-link .entry-title a:after {
@@ -4283,7 +4236,6 @@ p > video {
  */
 
 .mdu-share {
-<<<<<<< HEAD
 	display: inline-flex;
 	margin: 0 0 9.0909% 7.6923%
 }
@@ -4293,11 +4245,6 @@ p > video {
 	margin-right: 10px;
 	line-height: 34px;
 	font-weight: lighter;
-=======
-  display: flex;
-	float: right;
-	margin-top: -18px;
->>>>>>> 0246b4e3fd7045b21098da78d810dc53998aa98a
 }
 .mdu-share__item {
 }
