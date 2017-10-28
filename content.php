@@ -11,14 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-	global $post;
-	if ((strtotime($post->post_date) < strtotime('-28 days')) && is_single()) {
-		?>
-		<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
-			<?php } ?>
-
-			<?php if ( ( is_sticky() && is_home() ) || is_singular() || in_category('Comercial') ) { ?>
+			<?php if ( !has_post_format() ) { ?>
 				<?php twentyfifteen_post_thumbnail (); ?>
 				<?php } ?>
 
@@ -31,15 +24,15 @@
 				<?php endif; ?>
 
 				<header class="entry-header">
-					<?php
-					if ( is_single() ) :
-						the_title( '<h1 class="entry-title">', '</h1>' );
-						else :
-							the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-						endif;
-						?>
+					<?php if ( is_single() ) : ?>
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<?php elseif ( ( is_home() || is_archive() || is_pageg() ) && has_post_format('aside') ) : ?>
+						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?> <span class="data_aside"><?php echo get_the_date('j/n/y'); ?>, <?php the_time('G\hi'); ?></span>
+					<?php	else : ?>
+							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+					<?php	endif; ?>
 
-						<div class="entry-header-meta" style="/*border-bottom: 1px solid rgba(51, 51, 51, 0.1); padding-bottom: 20px*/">
+						<div class="entry-header-meta">
 							Por <?php if ( function_exists( 'coauthors_posts_links' ) ) {
 								coauthors_posts_links();
 							} else {
@@ -48,12 +41,10 @@
 							<?php echo get_the_date('j/n/y'); ?>, <?php the_time('G\hi'); ?> <span class="tempo-leitura"><?php echo reading_time(); ?></span> <span class="link-comentarios"><?php comments_popup_link('Comente', '1 comentário', '% comentários'); ?> </span>
 						</div>
 					</header>
-					<!--<hr class="post-entry-header-meta" /> .entry-header -->
 
 					<?php if ( is_sticky() || is_singular() || has_post_format('aside') || is_category() ) { ?>
 						<div class="entry-content">
 							<?php
-							/* translators: %s: Name of current post */
 							the_content( sprintf(
 								__( 'Continue reading %s', 'twentyfifteen' ),
 								the_title( '<span class="screen-reader-text">', '</span>', false )
@@ -68,10 +59,21 @@
 									'separator'   => '<span class="screen-reader-text">, </span>',
 									) );
 									?>
+									<?php if ( !is_singular() && has_post_format() ) { ?>
+										<span class="autor_aside">
+											Por <?php if ( function_exists('coauthors_posts_links') ) {
+												coauthors_posts_links();
+											} else {
+												the_author_posts_link();
+											} ?>
+										</span>
+									<?php } ?>
 								</div><!-- .entry-content -->
 								<?php } ?>
 
 								<?php if ( is_single() ) { ?>
+									<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
+
 									<div class="mdu-share">
 										<span>Compartilhe:</span>
 										<div class="mdu-share__item">

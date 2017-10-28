@@ -1214,11 +1214,6 @@ a:focus {
 .follow {
 	background-color: rgba(255, 248, 5, 0.24);
 }
-.paged .follow {
-	padding-top: 0;
-	margin-top: 0;
-	margin-bottom: 3.6em
-}
 .single .follow {
 	margin: 0;
 }
@@ -1719,7 +1714,7 @@ img.aligncenter {
 
 .hentry {
 	background-color: #fff;
-	padding-top: 7.6923%;
+	padding: 10.6923% 0;
 	position: relative;
 }
 .sticky,
@@ -1730,7 +1725,7 @@ img.aligncenter {
 	padding-top: 0;
 }
 .paged .hentry {
-	padding-bottom: 8.3333%;
+	padding: 7.6923% 0;
 }
 
 .hentry.has-post-thumbnail {
@@ -1745,17 +1740,6 @@ img.aligncenter {
 .hentry + .hentry {
 
 }
-
-/*.sticky {
-	border-bottom: 1px solid #EBEBEB;
-	margin-bottom: 2.4em !important;
-}
-
-.home .format-aside,
-.paged .format-aside {
-	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
-	margin-bottom: 2.4em;
-}*/
 
 .post-thumbnail {
 	border: 0;
@@ -1842,19 +1826,27 @@ a.post-thumbnail:focus {
 	margin-top: -4.45em;
 }
 
-.entry-header-meta {
-	font-size: 75%;
+.entry-header-meta,
+.home .autor_aside,
+.paged .autor_aside,
+.archive .autor_aside {
+	font-size: .75em;
 	margin-bottom: 1.9231em;
 	line-height: 180%;
-	font-weight: lighter;
+	font-weight: 200;
 	color: rgb(142, 142, 142);
+	font-family: sans-serif;
+	text-transform: uppercase
+
 }
-.entry-header-meta a {
+.entry-header-meta a,
+.autor_aside a {
 	margin-bottom: 2.4em;
 	color: rgb(142, 142, 142);
 	border-bottom: 1px solid #ccc;
 }
-.entry-header-meta a:hover {
+.entry-header-meta a:hover,
+.autor_aside a:hover {
 	border-bottom: 0;
 	color: rgb(170, 170, 170);
 }
@@ -2374,6 +2366,12 @@ a.post-thumbnail:focus {
  * 12.2 Post Formats
  */
 
+.home .format-aside header.entry-header,
+.paged .format-aside header.entry-header,
+.archive .format-aside header.entry-header {
+	margin-bottom: 1.6em
+}
+
 .home .format-aside .entry-title,
 .home .format-image .entry-title,
 .home .format-video .entry-title,
@@ -2382,11 +2380,26 @@ a.post-thumbnail:focus {
 .home .format-status .entry-title,
 .home .format-link .entry-title,
 .home .format-audio .entry-title,
-.home .format-chat .entry-title {
-	font-size: 22px;
-	font-size: 2.2rem;
+.home .format-chat .entry-title,
+.paged .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	font-size: 20px;
+	font-size: 2rem;
 	line-height: 1.3333;
-	margin-bottom: 0.5231em;
+	display: inline;
+	margin-bottom: 0
+}
+.home .format-aside .entry-header-meta,
+.paged .format-aside .entry-header-meta,
+.archive .format-aside .entry-header-meta {
+	display: none
+}
+.data_aside {
+	font-family: sans-serif;
+	color: rgb(142, 142, 142);
+	margin-left: 4px;
+	font-weight: 200;
+	font-size: .75em
 }
 
 .format-link .entry-title a:after {

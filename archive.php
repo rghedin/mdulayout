@@ -29,7 +29,7 @@ get_header(); ?>
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 				<?php if ( has_post_format('aside') ) { ?>
-					<div class="taxonomy-description">Posts curtos blabalbalbalbal alblabla abl ablalblabl bla lbal bla la</div>
+					<div class="taxonomy-description">Comentários e opiniões, em poucas palavras, publicados ao longo do dia.</div>
 				<?php } ?>
 			</header><!-- .page-header -->
 
